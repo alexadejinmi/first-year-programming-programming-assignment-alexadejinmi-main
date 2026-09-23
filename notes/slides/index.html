@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programming with p5.js</title>
+<link rel="stylesheet" href="css/tutorial.css">
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+</head>
+<body>
+<nav class="nav">
+  <span class="nav-prev nav-disabled">&laquo; Previous</span>
+  <span class="nav-up nav-disabled">&#8962; <span>Tutorial Home</span></span>
+  <a class="nav-next" href="00-getting-started/index.html">Next &raquo;</a>
+</nav>
+<main class="page">
+<h1>Programming with p5.js</h1>
+<p class="tagline">A sketch-by-sketch tutorial</p>
+
+<p>This tutorial is the companion to the p5.js sketches used in lectures. It follows the
+same "objects early" approach as the module: you'll read working code before writing your
+own, and each sketch introduces a small number of new ideas on top of the last one.</p>
+
+<p>Work through the sketches in order &mdash; each one builds on the ideas introduced by the
+sketches before it. Every sketch has its own set of pages: an overview of what the sketch is
+for, the programming concepts it introduces, how p5.js is using those concepts, a walkthrough
+of the actual code, and then tasks to try &mdash; both small modifications to the sketch itself
+and the two longer running projects (House and Cars &rarr; Frogger) that grow alongside the
+numbered sketches. Use the <strong>Next</strong> button in the bar at the top of each page to
+move through the whole tutorial in order, or jump straight to a sketch from the contents below.</p>
+
+<h2>Contents</h2>
+<ol class="sketch-list">
+  <li>
+    <a class="sketch-link" href="00-getting-started/index.html">00 — Getting Started: How Computer Graphics Work</a>
+    <div class="sketch-desc">
+<p>How screens actually draw pictures — pixels, the canvas, coordinates, shapes, drawing modes, and colour models — before a single line of p5 code appears.</p>
+    </div>
+  </li>
+  <li>
+    <a class="sketch-link" href="01-drawing-a-circle/index.html">01 — Drawing a Circle</a>
+    <div class="sketch-desc">
+<p>A single circle, drawn once with hard-coded numbers — the simplest possible p5 sketch, and the starting point for everything that follows.</p>
+    </div>
+  </li>
+  <li>
+    <a class="sketch-link" href="02-circle-follows-mouse/index.html">02 — Circle Follows the Mouse</a>
+    <div class="sketch-desc">
+<p>The same circle, now redrawn every frame inside <code>draw()</code> at the current <code>mouseX</code>/<code>mouseY</code>, so it appears to follow the mouse continuously.</p>
+    </div>
+  </li>
+  <li>
+    <a class="sketch-link" href="03-click-to-draw/index.html">03 — Click to Draw</a>
+    <div class="sketch-desc">
+<p>A circle stamped wherever the user clicks, with a key press clearing the canvas — the first sketch driven by <code>mousePressed()</code> and <code>keyPressed()</code> instead of just <code>draw()</code>.</p>
+    </div>
+  </li>
+  <li>
+    <a class="sketch-link" href="04-global-variables/index.html">04 — Global Variables</a>
+    <div class="sketch-desc">
+<p>Sketch 03's click-to-draw redone with every hard-coded number replaced by a named global <code>const</code>, making the code easier to read and change.</p>
+    </div>
+  </li>
+  <li>
+    <a class="sketch-link" href="05-color-object/index.html">05 — A Colour Object</a>
+    <div class="sketch-desc">
+<p>The four separate colour numbers replaced by one p5 <code>color()</code> object — the first object to appear in the series.</p>
+    </div>
+  </li>
+  <li>
+    <a class="sketch-link" href="06-ball-object-literal/index.html">06 — A Ball Object</a>
+    <div class="sketch-desc">
+<p>A ball's position, size and colour bundled into one hand-written object literal, read and written with dot notation.</p>
+    </div>
+  </li>
+  <li>
+    <a class="sketch-link" href="07-create-ball-function/index.html">07 — A createBall() Function</a>
+    <div class="sketch-desc">
+<p>Ball construction moved into a <code>createBall()</code> function that takes arguments and returns a new ball object — the first function built as a reusable 'factory'.</p>
+    </div>
+  </li>
+  <li>
+    <a class="sketch-link" href="08-display-ball-function/index.html">08 — A displayBall() Function</a>
+    <div class="sketch-desc">
+<p>Ball drawing moved into a <code>displayBall()</code> function that takes a ball object as a parameter — the first function written to operate on data passed into it.</p>
+    </div>
+  </li>
+  <li>
+    <a class="sketch-link" href="09-ball-class/index.html">09 — A Ball Class</a>
+    <div class="sketch-desc">
+<p><code>createBall()</code> and <code>displayBall()</code> merged into a single <code>Ball</code> class, with a constructor and a <code>display()</code> method — the first use of <code>class</code>, <code>this</code> and <code>new</code>.</p>
+    </div>
+  </li>
+  <li>
+    <a class="sketch-link" href="10-array-of-balls/index.html">10 — An Array of Balls</a>
+    <div class="sketch-desc">
+<p>Five balls at once, held in an array and displayed with a <code>for</code> loop — the first sketch to manage more than one object together.</p>
+    </div>
+  </li>
+  <li>
+    <a class="sketch-link" href="11-ball-velocity/index.html">11 — Ball Velocity</a>
+    <div class="sketch-desc">
+<p>Balls that move on their own every frame, each with its own velocity and a <code>move()</code> method — the first sketch where anything animates by itself.</p>
+    </div>
+  </li>
+  <li>
+    <a class="sketch-link" href="12-ball-wrap/index.html">12 — Wrapping Around the Edges</a>
+    <div class="sketch-desc">
+<p>Moving balls that wrap around the canvas edges like Pac-Man, using the modulo <code>%</code> operator instead of plain addition.</p>
+    </div>
+  </li>
+  <li>
+    <a class="sketch-link" href="13-ball-bounce/index.html">13 — Ball Bounce</a>
+    <div class="sketch-desc">
+<p>Moving balls that bounce off the canvas edges instead of wrapping, using <code>if</code>/<code>else if</code> branching to detect and react to a collision.</p>
+    </div>
+  </li>
+</ol>
+
+</main>
+<script>document.addEventListener("DOMContentLoaded", function () { hljs.highlightAll(); });</script>
+</body>
+</html>
