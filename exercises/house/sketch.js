@@ -4,32 +4,58 @@
 
 function setup() {
     createCanvas(900, 500);
-
-    background(100, 200, 200, 255);
-
-    console.log(mouseX, mouseY);
-
-    noStroke();
-    //base of the house 
-    fill(243, 229, 171, 255);
-    rect(350, 200, 200, 200);
-    //this triangle is the roof of the house
-    fill(98, 52, 18, 255);
-    triangle(350, 200, 450, 100, 550, 200);
-    //this rectangle is the door of the house 
-    fill(98, 52, 18, 255);
-    rect(mouseX,  100);
-    // the doorknob of the house
-    fill(240, 200, 18, 255);
-    circle(400, 350, 20, 10);
-   //this rectangle is the window 
-    fill(100, 200, 200, 255);
-    rect(460, 220, 50, 50);
-
-
-
-
+    background(100, 200, 200);
 }
 
 function draw() {
 }
+
+function mousePressed() {
+    noStroke();
+
+    // Base of the house
+    fill(243, 229, 171);
+    rect(mouseX, mouseY, 200, 150);
+
+    // Roof
+    fill(98, 52, 18);
+    triangle(
+        mouseX,
+        mouseY,
+        mouseX + 100,
+        mouseY - 100,
+        mouseX + 200,
+        mouseY
+    );
+
+    // Door
+    fill(98, 52, 18);
+    rect(
+        mouseX + 75,
+        mouseY + 50,
+        50,
+        100
+    );
+
+    // Doorknob
+    fill(240, 200, 18);
+    circle(
+        mouseX + 90,
+        mouseY + 100,
+        10
+    );
+
+    // Window
+    fill(100, 200, 200);
+    rect(
+        mouseX + 145,
+        mouseY + 10,
+        50,
+        50
+    );
+}
+
+function keyPressed() {
+    background(100, 200, 200);
+}
+
