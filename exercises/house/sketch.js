@@ -1,24 +1,40 @@
 // House — built from scratch, one stage at a time, in this same file.
 // See README.md in this folder for the current stage's task, then commit
 // before moving on to the next stage.
-
+let wallcol;
+let roofcol;
+let wallwidth = 200;
+let wallheight = 150;
+let doorcol;
+let windowcol;
 function setup() {
     createCanvas(900, 500);
     background(100, 200, 200);
+    wallcol = color(243, 229, 171, 150);
+    roofcol = color(98, 52, 18, 150);
+
+    wall = {
+        width: wallwidth,
+        height: wallheight,
+        wallcol: wallcol
+
+    }
 }
 
 function draw() {
+    wall.x = mouseX
+    wall.y = mouseY
 }
 
 function mousePressed() {
     noStroke();
 
     // Base of the house
-    fill(243, 229, 171);
+    fill(wallcol);
     rect(mouseX, mouseY, 200, 150);
 
     // Roof
-    fill(98, 52, 18);
+    fill(roofcol);
     triangle(
         mouseX,
         mouseY,
