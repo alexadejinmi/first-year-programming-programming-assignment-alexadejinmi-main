@@ -145,8 +145,13 @@ function setup() {
 
  
 
-    for (let i = 0; i < cars.length; i++) {  
-        cars[i].display();  
+    for (let i = 0; i < numLanes; i++) {
+        let speedX = random(1, 5);
+        if (random() < 0.5) {
+            speedX *= speedX * -1;
+        }
+        let car = new Car(random(width), random(height), 50, 30, color(random(255), random(255), random(255)), color(random(255), random(255), random(255)), color(random(255), random(255), random(255)), speedX, 0);
+        cars.push(car);
 
 
     }  
